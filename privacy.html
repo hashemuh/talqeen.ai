@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — Talqeen</title>
+  <meta name="description" content="Talqeen's privacy policy. We collect minimal data, process pronunciation on-device, and never sell your information.">
+  <link rel="canonical" href="https://hashemuh.github.io/talqeen.ai/privacy.html">
+  <link rel="icon" href="logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:       #1D9E75;
+      --teal-dark:  #085041;
+      --teal-deep:  #0F6E56;
+      --teal-light: #E1F5EE;
+      --teal-mid:   #9FE1CB;
+      --amber:      #FAC775;
+      --bg:         #FAFAF8;
+      --surface:    #F1EFE8;
+      --border:     #D3D1C7;
+      --text:       #2C2C2A;
+      --body:       #444441;
+      --muted:      #888780;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--body);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #fff;
+      transition: box-shadow 0.2s;
+    }
+    .nav.scrolled { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .nav-brand-en {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--teal-dark);
+      letter-spacing: -0.02em;
+    }
+    .nav-brand-ar {
+      font-family: 'Amiri', serif;
+      font-size: 1.1rem;
+      color: var(--teal);
+      direction: rtl;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--body);
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--teal); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+      text-decoration: none;
+      border: 2px solid transparent;
+    }
+    .btn-primary {
+      background: var(--teal);
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 0.92rem;
+    }
+    .btn-primary:hover { background: var(--teal-deep); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: #fff;
+      border-top: 1px solid var(--border);
+      padding: 8px 0;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      display: block;
+      padding: 12px 24px;
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--body);
+      font-size: 1rem;
+    }
+    .mobile-menu a:hover { background: var(--teal-light); color: var(--teal); }
+    .mobile-menu .btn-primary { margin: 8px 24px 12px; text-align: center; border-radius: 8px; }
+
+    /* CONTENT */
+    .page-hero {
+      background: linear-gradient(160deg, #fff 0%, var(--teal-light) 100%);
+      padding: 64px 24px 48px;
+    }
+    .page-hero .container { max-width: 760px; margin: 0 auto; }
+    .page-hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .page-hero .meta {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .prose {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    .prose h2 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-top: 48px;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--teal-light);
+    }
+    .prose h2:first-of-type { margin-top: 0; }
+
+    .prose h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 28px;
+      margin-bottom: 8px;
+    }
+
+    .prose p {
+      color: var(--body);
+      margin-bottom: 16px;
+      font-size: 0.97rem;
+    }
+
+    .prose ul, .prose ol {
+      color: var(--body);
+      padding-left: 24px;
+      margin-bottom: 16px;
+    }
+    .prose li { margin-bottom: 6px; font-size: 0.97rem; }
+
+    .prose a { color: var(--teal); }
+    .prose a:hover { text-decoration: underline; }
+
+    .callout {
+      background: var(--teal-light);
+      border-left: 4px solid var(--teal);
+      border-radius: 0 10px 10px 0;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+      color: var(--teal-dark);
+      font-weight: 600;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--teal-deep);
+      color: #fff;
+      padding: 56px 24px 0;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+    .footer-brand-en { font-size: 1.25rem; font-weight: 800; margin-bottom: 4px; }
+    .footer-brand-ar { font-family: 'Amiri', serif; font-size: 1rem; direction: rtl; opacity: 0.8; }
+    .footer-tagline { margin-top: 10px; font-size: 0.88rem; opacity: 0.65; font-style: italic; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.9rem; transition: color 0.15s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-stores { display: flex; flex-direction: column; gap: 12px; }
+    .footer-store-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff;
+      border-radius: 10px;
+      padding: 10px 18px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      transition: background 0.15s;
+      width: fit-content;
+    }
+    .footer-store-badge:hover { background: rgba(255,255,255,0.18); }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 0;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+    }
+
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) {
+      .nav-links, .btn-primary.nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="logo.png" width="32" height="32" alt="Talqeen" style="border-radius: 8px; display: block; flex-shrink: 0;">
+      <span class="nav-brand-en">Talqeen</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="index.html#method">How it works</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="index.html#download">Download</a></li>
+    </ul>
+    <a class="btn btn-primary nav-cta" href="index.html#pricing">Start free — no card needed</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#features">Features</a>
+    <a href="index.html#method">How it works</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="index.html#download">Download</a>
+    <a class="btn btn-primary" href="index.html#pricing">Start free — no card needed</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <p class="meta">Last updated: June 2025</p>
+  </div>
+</div>
+
+<div class="prose fade-in">
+
+  <div class="callout">
+    The short version: we collect the minimum needed to run the app. Your voice recordings are processed entirely on your device — they never leave your phone. We don't sell data. We don't advertise to children.
+  </div>
+
+  <h2>1. Who we are</h2>
+  <p>Talqeen is a Quranic Arabic reading app operated by Talqeen Ltd ("Talqeen", "we", "us", or "our"). Our registered address is in England and Wales. You can reach us at <a href="mailto:privacy@talqeen.io">privacy@talqeen.io</a>.</p>
+
+  <h2>2. What data we collect</h2>
+
+  <h3>Account information</h3>
+  <p>When you create an account we collect:</p>
+  <ul>
+    <li>Your name (or a display name you choose)</li>
+    <li>Email address</li>
+    <li>Age mode (adult / child — used to determine which privacy protections apply)</li>
+    <li>Password (stored as a salted hash — we never see your password in plain text)</li>
+  </ul>
+
+  <h3>Learning progress</h3>
+  <p>We store your progress through the curriculum — which lessons you have completed, your scores on identification exercises, and the dates of your sessions. This data is necessary to provide the service and is stored securely in our database.</p>
+
+  <h3>Subscription status</h3>
+  <p>We store whether you are on a free trial, monthly, annual, or family plan, and the renewal date of your subscription. Payment processing is handled entirely by the App Store (Apple) or Google Play (Google) — we never see your payment card details.</p>
+
+  <h3>Device and session information</h3>
+  <p>For analytics and crash reporting we collect basic device information (operating system version, app version) and anonymous session events (e.g. "lesson started", "lesson completed"). This data is aggregated and does not identify you individually. See the third-party services section for details.</p>
+
+  <h2>3. What we do NOT collect</h2>
+
+  <div class="callout">
+    Your voice recordings are never sent to Talqeen's servers or any other server. All pronunciation scoring is performed entirely on your device using an on-device AI model. No audio ever leaves your phone.
+  </div>
+
+  <p>We also do not collect:</p>
+  <ul>
+    <li>Location data</li>
+    <li>Contacts or photos</li>
+    <li>Browsing history</li>
+    <li>Biometric data (other than voice processed locally)</li>
+    <li>Any data for advertising or profiling purposes</li>
+  </ul>
+
+  <h2>4. Children's data (COPPA compliance)</h2>
+  <p>Talqeen is designed to be used by children under the supervision of a parent or guardian. We take children's privacy very seriously.</p>
+  <ul>
+    <li>Child profiles can only be created by an adult account holder (a parent or guardian). Children do not create accounts directly.</li>
+    <li>We do not knowingly collect personal information directly from children under 13 without verifiable parental consent.</li>
+    <li>We do not show advertisements of any kind to children, or to adults.</li>
+    <li>Voice recordings made by children are processed on-device only and are never transmitted to any server.</li>
+    <li>Child profile data (name, progress) is stored under the parent's account and is subject to the parent's data rights (see section 8).</li>
+    <li>If you believe a child has created an account without parental consent, please contact us immediately at <a href="mailto:privacy@talqeen.io">privacy@talqeen.io</a> and we will delete the account promptly.</li>
+  </ul>
+  <p>Talqeen complies with the Children's Online Privacy Protection Act (COPPA) and the UK Children's Code.</p>
+
+  <h2>5. How we use your data</h2>
+  <p>We use the data we collect to:</p>
+  <ul>
+    <li>Provide and personalise the Talqeen learning experience</li>
+    <li>Track and display your learning progress</li>
+    <li>Manage your subscription and billing</li>
+    <li>Send transactional emails (e.g. password reset, subscription confirmation) — never marketing without explicit opt-in</li>
+    <li>Detect and fix bugs and crashes</li>
+    <li>Understand aggregate usage patterns to improve the app</li>
+  </ul>
+  <p>We never sell your data to third parties. We never use your data to show you targeted advertisements.</p>
+
+  <h2>6. Third-party services</h2>
+  <p>We use a small number of carefully chosen third-party services. Each is listed here with a description of what data it receives:</p>
+
+  <h3>Supabase</h3>
+  <p>Our database and authentication provider. Stores account information, learning progress, and subscription status. Data is stored in EU data centres. Privacy policy: <a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a>.</p>
+
+  <h3>RevenueCat</h3>
+  <p>Manages subscription entitlements across iOS and Android. Receives your subscription status and a non-identifiable device ID. RevenueCat does not receive your email address, name, or any learning data. Privacy policy: <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">revenuecat.com/privacy</a>.</p>
+
+  <h3>PostHog</h3>
+  <p>Privacy-first product analytics. We use PostHog to understand how the app is used in aggregate (e.g. which lessons are most commonly completed, session lengths). PostHog is configured to anonymise all events — we do not send user IDs or email addresses to PostHog. We do not use Google Analytics. We do not use the Meta Pixel or any advertising trackers. Privacy policy: <a href="https://posthog.com/privacy" target="_blank" rel="noopener">posthog.com/privacy</a>.</p>
+
+  <h3>Apple App Store / Google Play</h3>
+  <p>Handle all payment processing for subscriptions. We receive only a subscription token — never your payment card details. Their respective privacy policies apply to any data shared with them during payment.</p>
+
+  <h2>7. Data retention</h2>
+  <ul>
+    <li>Account and learning data is kept for as long as your account is active.</li>
+    <li>If you delete your account, all personal data is deleted within 30 days.</li>
+    <li>Anonymised, aggregated analytics data (e.g. total number of lessons completed per day, with no user identifiers) may be retained indefinitely as it cannot be linked back to any individual.</li>
+    <li>Backups are retained for up to 30 days after account deletion, after which your data is purged from backups too.</li>
+  </ul>
+
+  <h2>8. Your rights</h2>
+  <p>You have the right to:</p>
+  <ul>
+    <li><strong>Access:</strong> Request a copy of all personal data we hold about you.</li>
+    <li><strong>Correction:</strong> Ask us to correct inaccurate or incomplete data.</li>
+    <li><strong>Deletion:</strong> Request deletion of all your data. See our <a href="delete-account.html">Account Deletion</a> page for how to do this.</li>
+    <li><strong>Portability:</strong> Export all your learning data in a machine-readable format from within the app (Profile → Export my data).</li>
+    <li><strong>Objection:</strong> Object to any processing you believe is not in your legitimate interest.</li>
+    <li><strong>Withdrawal of consent:</strong> Where we rely on consent, withdraw it at any time.</li>
+  </ul>
+  <p>To exercise any of these rights, email us at <a href="mailto:privacy@talqeen.io">privacy@talqeen.io</a>. We will respond within 30 days. If you are in the UK or EU, you also have the right to lodge a complaint with your supervisory authority (in the UK, the ICO: <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a>).</p>
+
+  <h2>9. Security</h2>
+  <p>We use industry-standard security practices including TLS encryption for data in transit, AES-256 encryption for data at rest, and row-level security in our database so that users can only access their own data. Passwords are stored using bcrypt. We conduct regular security reviews.</p>
+
+  <h2>10. International data transfers</h2>
+  <p>Talqeen is operated from England and Wales. Our database provider (Supabase) stores data in EU data centres. If data is transferred outside the UK/EEA, we ensure appropriate safeguards are in place (e.g. Standard Contractual Clauses).</p>
+
+  <h2>11. Changes to this policy</h2>
+  <p>We may update this policy from time to time. If we make significant changes, we will notify you in-app and by email at least 14 days before the change takes effect. The "Last updated" date at the top of this page shows when it was last revised.</p>
+
+  <h2>12. Contact</h2>
+  <p>Questions about this policy? Email us at <a href="mailto:privacy@talqeen.io">privacy@talqeen.io</a>. We aim to respond within 5 business days.</p>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
+        <img src="logo.png" width="40" height="40" alt="Talqeen" style="border-radius: 10px; flex-shrink: 0; display: block;">
+        <div class="footer-brand-en">Talqeen</div>
+      </div>
+      <p class="footer-tagline">Hear it. Say it. Read it.</p>
+    </div>
+    <div>
+      <ul class="footer-links">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
+        <li><a href="delete-account.html">Delete My Account</a></li>
+        <li><a href="mailto:privacy@talqeen.io">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-stores">
+        <a class="footer-store-badge" href="#google-play">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3.18 1.27C2.76 1.52 2.5 1.97 2.5 2.5v19c0 .53.26.98.68 1.23L14.5 12 3.18 1.27Z" fill="#EA4335"/>
+            <path d="M18.63 8.24 15.09 12l3.54 3.76 2.96-1.68c.84-.48.84-1.68 0-2.16L18.63 8.24Z" fill="#FBBC04"/>
+            <path d="M3.18 22.73 14.5 12 3.18 1.27C2.76 1.52 2.5 1.97 2.5 2.5v19c0 .53.26.98.68 1.23Z" fill="#34A853" opacity=".8"/>
+            <path d="M14.5 12 18.63 8.24l-3.54-3.76L3.18 1.27 14.5 12Z" fill="#4285F4" opacity=".8"/>
+          </svg>
+          Google Play
+        </a>
+        <a class="footer-store-badge" href="#app-store">
+          <svg width="14" height="16" viewBox="0 0 22 26" fill="none" aria-hidden="true">
+            <path d="M18.07 13.76c.03-3.17 2.62-4.7 2.74-4.78-1.5-2.18-3.83-2.48-4.64-2.51-1.97-.2-3.86 1.17-4.87 1.17-1 0-2.54-1.14-4.17-1.11C4.84 6.56 2.73 7.92 1.57 10c-2.36 4.06-.6 10.07 1.68 13.37 1.11 1.62 2.44 3.43 4.18 3.36 1.68-.07 2.32-1.08 4.35-1.08 2.03 0 2.61 1.08 4.38 1.04 1.81-.03 2.96-1.64 4.06-3.26 1.28-1.87 1.81-3.69 1.84-3.78-.04-.02-3.54-1.36-3.57-5.36l-.42.47Z" fill="white"/>
+            <path d="M14.69 4.22c.93-1.13 1.56-2.71 1.39-4.28-1.34.06-2.97.9-3.93 2-.86.99-1.62 2.57-1.42 4.09 1.49.11 3.02-.76 3.96-1.81Z" fill="white"/>
+          </svg>
+          App Store
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2025 Talqeen. A learning aid — a human teacher is always recommended.
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
+
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open);
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.05 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

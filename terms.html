@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terms of Use — Talqeen</title>
+  <meta name="description" content="Talqeen's Terms of Use — plain English, no legalese surprises. Read before using the app.">
+  <link rel="canonical" href="https://hashemuh.github.io/talqeen.ai/terms.html">
+  <link rel="icon" href="logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:       #1D9E75;
+      --teal-dark:  #085041;
+      --teal-deep:  #0F6E56;
+      --teal-light: #E1F5EE;
+      --teal-mid:   #9FE1CB;
+      --bg:         #FAFAF8;
+      --surface:    #F1EFE8;
+      --border:     #D3D1C7;
+      --text:       #2C2C2A;
+      --body:       #444441;
+      --muted:      #888780;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--body);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    .nav { position: sticky; top: 0; z-index: 100; background: #fff; transition: box-shadow 0.2s; }
+    .nav.scrolled { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-brand-en { font-size: 1.35rem; font-weight: 800; color: var(--teal-dark); letter-spacing: -0.02em; }
+    .nav-brand-ar { font-family: 'Amiri', serif; font-size: 1.1rem; color: var(--teal); direction: rtl; }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { text-decoration: none; font-weight: 600; font-size: 0.92rem; color: var(--body); transition: color 0.15s; }
+    .nav-links a:hover { color: var(--teal); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; font-family: 'Nunito', sans-serif; font-weight: 700; border-radius: 8px; cursor: pointer; transition: background 0.15s; text-decoration: none; border: 2px solid transparent; }
+    .btn-primary { background: var(--teal); color: #fff; padding: 10px 20px; font-size: 0.92rem; }
+    .btn-primary:hover { background: var(--teal-deep); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.2s, opacity 0.2s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; flex-direction: column; background: #fff; border-top: 1px solid var(--border); padding: 8px 0; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { display: block; padding: 12px 24px; text-decoration: none; font-weight: 600; color: var(--body); font-size: 1rem; }
+    .mobile-menu a:hover { background: var(--teal-light); color: var(--teal); }
+    .mobile-menu .btn-primary { margin: 8px 24px 12px; text-align: center; border-radius: 8px; }
+
+    /* CONTENT */
+    .page-hero { background: linear-gradient(160deg, #fff 0%, var(--teal-light) 100%); padding: 64px 24px 48px; }
+    .page-hero .container { max-width: 760px; margin: 0 auto; }
+    .page-hero h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; color: var(--text); letter-spacing: -0.02em; margin-bottom: 12px; }
+    .page-hero .meta { font-size: 0.88rem; color: var(--muted); }
+
+    .prose { max-width: 760px; margin: 0 auto; padding: 56px 24px 80px; }
+
+    .prose h2 {
+      font-size: 1.3rem; font-weight: 800; color: var(--text);
+      margin-top: 48px; margin-bottom: 14px;
+      padding-bottom: 8px; border-bottom: 2px solid var(--teal-light);
+    }
+    .prose h2:first-of-type { margin-top: 0; }
+    .prose h3 { font-size: 1.05rem; font-weight: 700; color: var(--text); margin-top: 28px; margin-bottom: 8px; }
+    .prose p { color: var(--body); margin-bottom: 16px; font-size: 0.97rem; }
+    .prose ul, .prose ol { color: var(--body); padding-left: 24px; margin-bottom: 16px; }
+    .prose li { margin-bottom: 6px; font-size: 0.97rem; }
+    .prose a { color: var(--teal); }
+    .prose a:hover { text-decoration: underline; }
+    .prose strong { color: var(--text); }
+
+    .callout { background: var(--teal-light); border-left: 4px solid var(--teal); border-radius: 0 10px 10px 0; padding: 16px 20px; margin-bottom: 20px; font-size: 0.95rem; color: var(--teal-dark); font-weight: 600; }
+
+    /* FOOTER */
+    footer { background: var(--teal-deep); color: #fff; padding: 56px 24px 0; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.12); }
+    .footer-brand-en { font-size: 1.25rem; font-weight: 800; margin-bottom: 4px; }
+    .footer-brand-ar { font-family: 'Amiri', serif; font-size: 1rem; direction: rtl; opacity: 0.8; }
+    .footer-tagline { margin-top: 10px; font-size: 0.88rem; opacity: 0.65; font-style: italic; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.9rem; transition: color 0.15s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-stores { display: flex; flex-direction: column; gap: 12px; }
+    .footer-store-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); color: #fff; border-radius: 10px; padding: 10px 18px; text-decoration: none; font-size: 0.85rem; font-weight: 700; transition: background 0.15s; width: fit-content; }
+    .footer-store-badge:hover { background: rgba(255,255,255,0.18); }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; padding: 20px 0; font-size: 0.78rem; color: rgba(255,255,255,0.45); text-align: center; }
+
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) {
+      .nav-links, .btn-primary.nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="logo.png" width="32" height="32" alt="Talqeen" style="border-radius: 8px; display: block; flex-shrink: 0;">
+      <span class="nav-brand-en">Talqeen</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="index.html#method">How it works</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="index.html#download">Download</a></li>
+    </ul>
+    <a class="btn btn-primary nav-cta" href="index.html#pricing">Start free — no card needed</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#features">Features</a>
+    <a href="index.html#method">How it works</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="index.html#download">Download</a>
+    <a class="btn btn-primary" href="index.html#pricing">Start free — no card needed</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <h1>Terms of Use</h1>
+    <p class="meta">Last updated: June 2025</p>
+  </div>
+</div>
+
+<div class="prose fade-in">
+
+  <div class="callout">
+    We've written these terms in plain English. They're legally binding, but we've done our best to make them readable. If something is unclear, email us at <a href="mailto:legal@talqeen.io">legal@talqeen.io</a>.
+  </div>
+
+  <h2>1. Acceptance of terms</h2>
+  <p>By downloading, installing, or using the Talqeen app or visiting this website, you agree to be bound by these Terms of Use ("Terms"). If you do not agree, please do not use Talqeen.</p>
+  <p>We may update these Terms from time to time. If we make material changes, we will notify you in-app and by email at least 14 days before the change takes effect. Continuing to use Talqeen after that point means you accept the updated Terms.</p>
+
+  <h2>2. What Talqeen is</h2>
+  <p>Talqeen is a mobile application that teaches Quranic Arabic reading using the Noor Al-Bayan curriculum method. It provides structured lessons, pronunciation scoring using on-device AI, and progress tracking.</p>
+
+  <div class="callout">
+    Talqeen is a learning aid. It does not replace a qualified human Quran teacher (a <em>mu'allim</em>). We strongly encourage all learners to study alongside a qualified teacher wherever possible. Talqeen makes no claim to be a religious authority, and nothing in the app should be taken as religious guidance or fatwa.
+  </div>
+
+  <h2>3. Account creation and eligibility</h2>
+  <p>To use Talqeen you must create an account. You must be at least 13 years of age to create an account. If you are between 13 and 18, you confirm that a parent or legal guardian has reviewed and agreed to these Terms on your behalf.</p>
+  <p><strong>Child profiles</strong> (for users under 13) may only be created by a parent or legal guardian on a family account. Children under 13 may not create their own Talqeen accounts. By creating a child profile, you represent that you are the child's parent or legal guardian and that you consent to the child's use of the app under these Terms.</p>
+  <p>You are responsible for keeping your account credentials secure. You must notify us immediately at <a href="mailto:legal@talqeen.io">legal@talqeen.io</a> if you believe your account has been compromised.</p>
+
+  <h2>4. Subscriptions and billing</h2>
+
+  <h3>Free trial</h3>
+  <p>New accounts receive a 30-day free trial with full access to all features on the relevant plan. No payment card is required to start a free trial. At the end of the trial period, you will be prompted to choose a paid plan if you wish to continue. You will never be automatically charged without selecting a plan and providing payment details.</p>
+
+  <h3>Paid plans</h3>
+  <p>Paid plans (Monthly, Annual, Family Annual) are billed through the Apple App Store or Google Play. Billing is governed by Apple's or Google's policies respectively. Current prices are displayed in the app and on our website at the time of purchase.</p>
+
+  <h3>Cancellation</h3>
+  <p>You may cancel your subscription at any time through the App Store or Google Play. After cancellation, your subscription remains active until the end of the current billing period. No partial refunds are provided for unused portions of a billing period, except as required by applicable law or the App Store / Play Store refund policies.</p>
+
+  <h3>Refunds</h3>
+  <p>Refund requests are handled by Apple or Google according to their respective policies, as all billing is processed through their platforms. To request a refund, contact Apple Support or Google Play Support directly. We are unable to issue refunds directly.</p>
+
+  <h3>Price changes</h3>
+  <p>We may change subscription prices. If we do, we will notify you at least 30 days in advance. You may cancel before the new price takes effect.</p>
+
+  <h2>5. Acceptable use</h2>
+  <p>You agree not to:</p>
+  <ul>
+    <li>Use Talqeen for any unlawful purpose or in violation of these Terms</li>
+    <li>Scrape, crawl, or systematically download any content from the app or website</li>
+    <li>Reverse engineer, decompile, or disassemble any part of the app</li>
+    <li>Attempt to gain unauthorised access to our systems or another user's account</li>
+    <li>Use the app to distribute malware, spam, or any harmful content</li>
+    <li>Remove, obscure, or alter any copyright or proprietary notices</li>
+    <li>Resell or sublicense access to the app without our written permission</li>
+    <li>Use the app in a way that could damage, disable, or impair it</li>
+  </ul>
+  <p>We reserve the right to suspend or terminate accounts that violate these terms without prior notice.</p>
+
+  <h2>6. Intellectual property and content</h2>
+
+  <h3>Quranic content</h3>
+  <p>The text of the Quran is in the public domain. The Noor Al-Bayan curriculum methodology is a traditional pedagogical method that is not proprietary to Talqeen. Audio recitations used in the app are licensed from their respective rights holders or are sourced from public domain recordings.</p>
+
+  <h3>App and curriculum structure</h3>
+  <p>The Talqeen app, its user interface design, lesson sequencing, scoring algorithms, visual design, and all software code are the proprietary intellectual property of Talqeen Ltd, protected by copyright and other intellectual property laws. You may not copy, reproduce, distribute, or create derivative works from any part of the app without our express written permission.</p>
+
+  <h3>User-generated content</h3>
+  <p>Talqeen does not collect or store your voice recordings — all pronunciation scoring happens on-device. You do not submit any user-generated content to Talqeen's servers.</p>
+
+  <h2>7. Privacy</h2>
+  <p>Your use of Talqeen is also governed by our <a href="privacy.html">Privacy Policy</a>, which is incorporated into these Terms by reference. Please read it carefully — it explains how we collect, use, and protect your data.</p>
+
+  <h2>8. Disclaimer of warranties</h2>
+  <p>Talqeen is provided "as is" and "as available" without warranties of any kind, either express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
+  <p>We do not warrant that the app will be uninterrupted, error-free, or free of viruses or other harmful components. We do not warrant that any particular learning outcome will be achieved through use of the app.</p>
+  <p>Nothing in these Terms excludes or limits any warranty that cannot be excluded under applicable consumer protection law.</p>
+
+  <h2>9. Limitation of liability</h2>
+  <p>To the maximum extent permitted by applicable law, Talqeen Ltd and its officers, directors, employees, and agents shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits, revenue, data, or goodwill, arising from your use of or inability to use Talqeen.</p>
+  <p>Our total aggregate liability to you for any claim arising from your use of Talqeen shall not exceed the amount you paid to us in the 12 months preceding the claim, or £50 (whichever is greater).</p>
+  <p>Nothing in these Terms limits our liability for death or personal injury caused by our negligence, fraud, or any liability that cannot be limited by law.</p>
+
+  <h2>10. Indemnification</h2>
+  <p>You agree to indemnify and hold harmless Talqeen Ltd and its officers, directors, employees, and agents from and against any claims, damages, losses, and expenses (including reasonable legal fees) arising from your violation of these Terms or your use of the app in a manner not authorised by these Terms.</p>
+
+  <h2>11. Governing law and disputes</h2>
+  <p>These Terms are governed by the laws of England and Wales. Any disputes arising from these Terms or your use of Talqeen shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+  <p>If you are a consumer in the EU or UK, you may also have the right to use the European Commission's Online Dispute Resolution platform or contact your national consumer protection body.</p>
+
+  <h2>12. Termination</h2>
+  <p>We may suspend or terminate your access to Talqeen at any time if you violate these Terms, or for any other reason with reasonable notice. You may terminate your account at any time by following the steps on our <a href="delete-account.html">Account Deletion</a> page.</p>
+  <p>On termination, all rights and licences granted to you under these Terms will immediately cease. Sections that by their nature should survive termination (including sections 6, 8, 9, 10, 11) will do so.</p>
+
+  <h2>13. Contact</h2>
+  <p>For questions about these Terms, please contact us at <a href="mailto:legal@talqeen.io">legal@talqeen.io</a>. For privacy questions, contact <a href="mailto:privacy@talqeen.io">privacy@talqeen.io</a>.</p>
+  <p>Talqeen Ltd<br>
+  England and Wales<br>
+  <a href="mailto:legal@talqeen.io">legal@talqeen.io</a></p>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
+        <img src="logo.png" width="40" height="40" alt="Talqeen" style="border-radius: 10px; flex-shrink: 0; display: block;">
+        <div class="footer-brand-en">Talqeen</div>
+      </div>
+      <p class="footer-tagline">Hear it. Say it. Read it.</p>
+    </div>
+    <div>
+      <ul class="footer-links">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
+        <li><a href="delete-account.html">Delete My Account</a></li>
+        <li><a href="mailto:privacy@talqeen.io">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-stores">
+        <a class="footer-store-badge" href="#google-play">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3.18 1.27C2.76 1.52 2.5 1.97 2.5 2.5v19c0 .53.26.98.68 1.23L14.5 12 3.18 1.27Z" fill="#EA4335"/>
+            <path d="M18.63 8.24 15.09 12l3.54 3.76 2.96-1.68c.84-.48.84-1.68 0-2.16L18.63 8.24Z" fill="#FBBC04"/>
+            <path d="M3.18 22.73 14.5 12 3.18 1.27C2.76 1.52 2.5 1.97 2.5 2.5v19c0 .53.26.98.68 1.23Z" fill="#34A853" opacity=".8"/>
+            <path d="M14.5 12 18.63 8.24l-3.54-3.76L3.18 1.27 14.5 12Z" fill="#4285F4" opacity=".8"/>
+          </svg>
+          Google Play
+        </a>
+        <a class="footer-store-badge" href="#app-store">
+          <svg width="14" height="16" viewBox="0 0 22 26" fill="none" aria-hidden="true">
+            <path d="M18.07 13.76c.03-3.17 2.62-4.7 2.74-4.78-1.5-2.18-3.83-2.48-4.64-2.51-1.97-.2-3.86 1.17-4.87 1.17-1 0-2.54-1.14-4.17-1.11C4.84 6.56 2.73 7.92 1.57 10c-2.36 4.06-.6 10.07 1.68 13.37 1.11 1.62 2.44 3.43 4.18 3.36 1.68-.07 2.32-1.08 4.35-1.08 2.03 0 2.61 1.08 4.38 1.04 1.81-.03 2.96-1.64 4.06-3.26 1.28-1.87 1.81-3.69 1.84-3.78-.04-.02-3.54-1.36-3.57-5.36l-.42.47Z" fill="white"/>
+            <path d="M14.69 4.22c.93-1.13 1.56-2.71 1.39-4.28-1.34.06-2.97.9-3.93 2-.86.99-1.62 2.57-1.42 4.09 1.49.11 3.02-.76 3.96-1.81Z" fill="white"/>
+          </svg>
+          App Store
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2025 Talqeen. A learning aid — a human teacher is always recommended.
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
+
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open);
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.05 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

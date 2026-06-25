@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page Not Found — Talqeen</title>
+  <meta name="description" content="This page doesn't exist — but your Quran journey does.">
+  <link rel="canonical" href="https://hashemuh.github.io/talqeen.ai/404.html">
+  <link rel="icon" href="logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:       #1D9E75;
+      --teal-dark:  #085041;
+      --teal-deep:  #0F6E56;
+      --teal-light: #E1F5EE;
+      --teal-mid:   #9FE1CB;
+      --bg:         #FAFAF8;
+      --surface:    #F1EFE8;
+      --border:     #D3D1C7;
+      --text:       #2C2C2A;
+      --body:       #444441;
+      --muted:      #888780;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--body);
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* NAV */
+    .nav { position: sticky; top: 0; z-index: 100; background: #fff; transition: box-shadow 0.2s; }
+    .nav.scrolled { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-brand-en { font-size: 1.35rem; font-weight: 800; color: var(--teal-dark); letter-spacing: -0.02em; }
+    .nav-brand-ar { font-family: 'Amiri', serif; font-size: 1.1rem; color: var(--teal); direction: rtl; }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { text-decoration: none; font-weight: 600; font-size: 0.92rem; color: var(--body); transition: color 0.15s; }
+    .nav-links a:hover { color: var(--teal); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; font-family: 'Nunito', sans-serif; font-weight: 700; border-radius: 8px; cursor: pointer; transition: background 0.15s, transform 0.1s; text-decoration: none; border: 2px solid transparent; }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--teal); color: #fff; padding: 10px 20px; font-size: 0.92rem; }
+    .btn-primary:hover { background: var(--teal-deep); }
+    .btn-primary-lg { background: var(--teal); color: #fff; padding: 16px 36px; font-size: 1.05rem; }
+    .btn-primary-lg:hover { background: var(--teal-deep); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.2s, opacity 0.2s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; flex-direction: column; background: #fff; border-top: 1px solid var(--border); padding: 8px 0; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { display: block; padding: 12px 24px; text-decoration: none; font-weight: 600; color: var(--body); font-size: 1rem; }
+    .mobile-menu a:hover { background: var(--teal-light); color: var(--teal); }
+    .mobile-menu .btn-primary { margin: 8px 24px 12px; text-align: center; border-radius: 8px; }
+
+    /* 404 MAIN */
+    .page-404 {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 24px;
+    }
+
+    .error-container { max-width: 540px; }
+
+    .error-arabic {
+      font-family: 'Amiri', serif;
+      font-size: 120px;
+      color: var(--teal);
+      direction: rtl;
+      line-height: 1;
+      display: block;
+      margin-bottom: 8px;
+      opacity: 0.15;
+    }
+
+    .error-code {
+      font-size: 5rem;
+      font-weight: 800;
+      color: var(--teal);
+      line-height: 1;
+      margin-bottom: 16px;
+      letter-spacing: -0.04em;
+    }
+
+    .error-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .error-subtitle {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 36px;
+      line-height: 1.65;
+    }
+
+    .error-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-outline {
+      border-color: var(--teal);
+      color: var(--teal);
+      padding: 14px 28px;
+      font-size: 0.97rem;
+    }
+    .btn-outline:hover { background: var(--teal-light); }
+
+    .error-explore {
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .error-explore p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .explore-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .explore-links a {
+      text-decoration: none;
+      color: var(--teal);
+      font-weight: 700;
+      font-size: 0.92rem;
+      transition: color 0.15s;
+    }
+    .explore-links a:hover { color: var(--teal-dark); text-decoration: underline; }
+
+    /* FOOTER */
+    footer { background: var(--teal-deep); color: #fff; padding: 56px 24px 0; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.12); }
+    .footer-brand-en { font-size: 1.25rem; font-weight: 800; margin-bottom: 4px; }
+    .footer-brand-ar { font-family: 'Amiri', serif; font-size: 1rem; direction: rtl; opacity: 0.8; }
+    .footer-tagline { margin-top: 10px; font-size: 0.88rem; opacity: 0.65; font-style: italic; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.9rem; transition: color 0.15s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-stores { display: flex; flex-direction: column; gap: 12px; }
+    .footer-store-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); color: #fff; border-radius: 10px; padding: 10px 18px; text-decoration: none; font-size: 0.85rem; font-weight: 700; transition: background 0.15s; width: fit-content; }
+    .footer-store-badge:hover { background: rgba(255,255,255,0.18); }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; padding: 20px 0; font-size: 0.78rem; color: rgba(255,255,255,0.45); text-align: center; }
+
+    @media (max-width: 768px) {
+      .nav-links, .btn-primary.nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+      .error-arabic { font-size: 80px; }
+      .error-code { font-size: 3.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="logo.png" width="32" height="32" alt="Talqeen" style="border-radius: 8px; display: block; flex-shrink: 0;">
+      <span class="nav-brand-en">Talqeen</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="index.html#method">How it works</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="index.html#download">Download</a></li>
+    </ul>
+    <a class="btn btn-primary nav-cta" href="index.html#pricing">Start free — no card needed</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#features">Features</a>
+    <a href="index.html#method">How it works</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="index.html#download">Download</a>
+    <a class="btn btn-primary" href="index.html#pricing">Start free — no card needed</a>
+  </div>
+</nav>
+
+<main class="page-404">
+  <div class="error-container">
+    <span class="error-arabic" aria-hidden="true">٤٠٤</span>
+    <div class="error-code">404</div>
+    <h1 class="error-title">This page doesn't exist</h1>
+    <p class="error-subtitle">But your Quran journey does. Let's get you back on track — everything you need is on the home page.</p>
+
+    <div class="error-links">
+      <a class="btn btn-primary-lg" href="index.html">Back to home →</a>
+      <a class="btn btn-outline" href="index.html#download">Download the app</a>
+    </div>
+
+    <div class="error-explore">
+      <p>Or explore</p>
+      <div class="explore-links">
+        <a href="index.html#features">Features</a>
+        <a href="index.html#method">How it works</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
+        <img src="logo.png" width="40" height="40" alt="Talqeen" style="border-radius: 10px; flex-shrink: 0; display: block;">
+        <div class="footer-brand-en">Talqeen</div>
+      </div>
+      <p class="footer-tagline">Hear it. Say it. Read it.</p>
+    </div>
+    <div>
+      <ul class="footer-links">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
+        <li><a href="delete-account.html">Delete My Account</a></li>
+        <li><a href="mailto:privacy@talqeen.io">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-stores">
+        <a class="footer-store-badge" href="#google-play">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3.18 1.27C2.76 1.52 2.5 1.97 2.5 2.5v19c0 .53.26.98.68 1.23L14.5 12 3.18 1.27Z" fill="#EA4335"/>
+            <path d="M18.63 8.24 15.09 12l3.54 3.76 2.96-1.68c.84-.48.84-1.68 0-2.16L18.63 8.24Z" fill="#FBBC04"/>
+            <path d="M3.18 22.73 14.5 12 3.18 1.27C2.76 1.52 2.5 1.97 2.5 2.5v19c0 .53.26.98.68 1.23Z" fill="#34A853" opacity=".8"/>
+            <path d="M14.5 12 18.63 8.24l-3.54-3.76L3.18 1.27 14.5 12Z" fill="#4285F4" opacity=".8"/>
+          </svg>
+          Google Play
+        </a>
+        <a class="footer-store-badge" href="#app-store">
+          <svg width="14" height="16" viewBox="0 0 22 26" fill="none" aria-hidden="true">
+            <path d="M18.07 13.76c.03-3.17 2.62-4.7 2.74-4.78-1.5-2.18-3.83-2.48-4.64-2.51-1.97-.2-3.86 1.17-4.87 1.17-1 0-2.54-1.14-4.17-1.11C4.84 6.56 2.73 7.92 1.57 10c-2.36 4.06-.6 10.07 1.68 13.37 1.11 1.62 2.44 3.43 4.18 3.36 1.68-.07 2.32-1.08 4.35-1.08 2.03 0 2.61 1.08 4.38 1.04 1.81-.03 2.96-1.64 4.06-3.26 1.28-1.87 1.81-3.69 1.84-3.78-.04-.02-3.54-1.36-3.57-5.36l-.42.47Z" fill="white"/>
+            <path d="M14.69 4.22c.93-1.13 1.56-2.71 1.39-4.28-1.34.06-2.97.9-3.93 2-.86.99-1.62 2.57-1.42 4.09 1.49.11 3.02-.76 3.96-1.81Z" fill="white"/>
+          </svg>
+          App Store
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2025 Talqeen. A learning aid — a human teacher is always recommended.
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
+
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Delete Your Account — Talqeen</title>
+  <meta name="description" content="How to delete your Talqeen account and all associated data. Step-by-step instructions for in-app deletion and email requests.">
+  <link rel="canonical" href="https://hashemuh.github.io/talqeen.ai/delete-account.html">
+  <link rel="icon" href="logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:       #1D9E75;
+      --teal-dark:  #085041;
+      --teal-deep:  #0F6E56;
+      --teal-light: #E1F5EE;
+      --teal-mid:   #9FE1CB;
+      --coral:      #D85A30;
+      --bg:         #FAFAF8;
+      --surface:    #F1EFE8;
+      --border:     #D3D1C7;
+      --text:       #2C2C2A;
+      --body:       #444441;
+      --muted:      #888780;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--body);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    .nav { position: sticky; top: 0; z-index: 100; background: #fff; transition: box-shadow 0.2s; }
+    .nav.scrolled { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-brand-en { font-size: 1.35rem; font-weight: 800; color: var(--teal-dark); letter-spacing: -0.02em; }
+    .nav-brand-ar { font-family: 'Amiri', serif; font-size: 1.1rem; color: var(--teal); direction: rtl; }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { text-decoration: none; font-weight: 600; font-size: 0.92rem; color: var(--body); transition: color 0.15s; }
+    .nav-links a:hover { color: var(--teal); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; font-family: 'Nunito', sans-serif; font-weight: 700; border-radius: 8px; cursor: pointer; transition: background 0.15s; text-decoration: none; border: 2px solid transparent; }
+    .btn-primary { background: var(--teal); color: #fff; padding: 10px 20px; font-size: 0.92rem; }
+    .btn-primary:hover { background: var(--teal-deep); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.2s, opacity 0.2s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; flex-direction: column; background: #fff; border-top: 1px solid var(--border); padding: 8px 0; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { display: block; padding: 12px 24px; text-decoration: none; font-weight: 600; color: var(--body); font-size: 1rem; }
+    .mobile-menu a:hover { background: var(--teal-light); color: var(--teal); }
+    .mobile-menu .btn-primary { margin: 8px 24px 12px; text-align: center; border-radius: 8px; }
+
+    /* CONTENT */
+    .page-hero { background: linear-gradient(160deg, #fff 0%, var(--teal-light) 100%); padding: 64px 24px 48px; }
+    .page-hero .container { max-width: 760px; margin: 0 auto; }
+    .page-hero h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; color: var(--text); letter-spacing: -0.02em; margin-bottom: 12px; }
+    .page-hero p { color: var(--body); font-size: 1.05rem; }
+
+    .prose { max-width: 760px; margin: 0 auto; padding: 56px 24px 80px; }
+
+    .prose h2 {
+      font-size: 1.3rem; font-weight: 800; color: var(--text);
+      margin-top: 48px; margin-bottom: 14px;
+      padding-bottom: 8px; border-bottom: 2px solid var(--teal-light);
+    }
+    .prose h2:first-of-type { margin-top: 0; }
+
+    .prose p { color: var(--body); margin-bottom: 16px; font-size: 0.97rem; }
+    .prose a { color: var(--teal); }
+    .prose a:hover { text-decoration: underline; }
+
+    .callout {
+      background: var(--teal-light); border-left: 4px solid var(--teal);
+      border-radius: 0 10px 10px 0; padding: 16px 20px; margin-bottom: 20px;
+      font-size: 0.95rem; color: var(--teal-dark); font-weight: 600;
+    }
+
+    .warning-callout {
+      background: #FFF4EE; border-left: 4px solid var(--coral);
+      border-radius: 0 10px 10px 0; padding: 16px 20px; margin-bottom: 20px;
+      font-size: 0.95rem; color: #7a2e14; font-weight: 600;
+    }
+
+    .steps {
+      display: flex; flex-direction: column; gap: 16px;
+      margin-bottom: 20px;
+    }
+    .step {
+      display: flex; align-items: flex-start; gap: 16px;
+      background: #fff; border: 1.5px solid var(--border);
+      border-radius: 12px; padding: 18px 20px;
+    }
+    .step-num {
+      flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%;
+      background: var(--teal); color: #fff; font-weight: 800; font-size: 0.88rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .step-body h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .step-body p { font-size: 0.9rem; color: var(--muted); margin: 0; line-height: 1.55; }
+
+    .deleted-list { list-style: none; padding: 0; margin-bottom: 20px; display: flex; flex-direction: column; gap: 8px; }
+    .deleted-list li { display: flex; align-items: center; gap: 10px; font-size: 0.97rem; color: var(--body); }
+    .deleted-list li::before { content: "✓"; color: var(--teal); font-weight: 700; flex-shrink: 0; }
+
+    /* FOOTER */
+    footer { background: var(--teal-deep); color: #fff; padding: 56px 24px 0; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.12); }
+    .footer-brand-en { font-size: 1.25rem; font-weight: 800; margin-bottom: 4px; }
+    .footer-brand-ar { font-family: 'Amiri', serif; font-size: 1rem; direction: rtl; opacity: 0.8; }
+    .footer-tagline { margin-top: 10px; font-size: 0.88rem; opacity: 0.65; font-style: italic; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.9rem; transition: color 0.15s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-stores { display: flex; flex-direction: column; gap: 12px; }
+    .footer-store-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); color: #fff; border-radius: 10px; padding: 10px 18px; text-decoration: none; font-size: 0.85rem; font-weight: 700; transition: background 0.15s; width: fit-content; }
+    .footer-store-badge:hover { background: rgba(255,255,255,0.18); }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; padding: 20px 0; font-size: 0.78rem; color: rgba(255,255,255,0.45); text-align: center; }
+
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) {
+      .nav-links, .btn-primary.nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="logo.png" width="32" height="32" alt="Talqeen" style="border-radius: 8px; display: block; flex-shrink: 0;">
+      <span class="nav-brand-en">Talqeen</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="index.html#method">How it works</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="index.html#download">Download</a></li>
+    </ul>
+    <a class="btn btn-primary nav-cta" href="index.html#pricing">Start free — no card needed</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#features">Features</a>
+    <a href="index.html#method">How it works</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="index.html#download">Download</a>
+    <a class="btn btn-primary" href="index.html#pricing">Start free — no card needed</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <h1>Delete Your Account</h1>
+    <p>We're sorry to see you go. Deleting your account is straightforward and you are always in control of your data.</p>
+  </div>
+</div>
+
+<div class="prose fade-in">
+
+  <h2>What gets deleted</h2>
+  <p>When you delete your Talqeen account, the following is permanently removed:</p>
+  <ul class="deleted-list">
+    <li>Your account (name, email address, password)</li>
+    <li>All learning progress across every stage and lesson</li>
+    <li>All child profiles attached to your account</li>
+    <li>All certificates earned</li>
+    <li>Your subscription record (though billing must be cancelled separately — see below)</li>
+  </ul>
+
+  <div class="warning-callout">
+    Account deletion cannot be undone. Once deleted, nothing can be restored — not your progress, not your child profiles, not your certificates. Please be certain before proceeding.
+  </div>
+
+  <h2>How to delete from the app</h2>
+  <p>The quickest way to delete your account is directly from within the Talqeen app:</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h3>Open the app and go to your Profile</h3>
+        <p>Tap the profile icon in the bottom navigation bar.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h3>Tap "Settings"</h3>
+        <p>Scroll to the bottom of your profile screen and tap the Settings icon.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h3>Tap "Delete my account"</h3>
+        <p>This option appears at the bottom of the Settings screen, beneath all other options.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <h3>Confirm deletion</h3>
+        <p>You will be asked to type the word "DELETE" to confirm. This prevents accidental deletions.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <h3>Done</h3>
+        <p>Your account is immediately deactivated and all data is queued for deletion within 30 days.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>How to delete by email</h2>
+  <p>If you cannot access the app, you can request account deletion by email:</p>
+  <div class="callout">
+    Send an email to <a href="mailto:privacy@talqeen.io">privacy@talqeen.io</a> with the subject line:<br>
+    <strong>"Account deletion request"</strong><br><br>
+    Include the email address registered to your Talqeen account in the body of the email. We will process your request within 7 days and send a confirmation when complete.
+  </div>
+
+  <h2>Cancel your subscription first</h2>
+  <div class="warning-callout">
+    Deleting your Talqeen account does not automatically cancel an active subscription. If you have an active paid subscription, you must cancel it separately through Google Play or the App Store — otherwise you may continue to be billed.
+  </div>
+  <p>How to cancel your subscription:</p>
+  <ul>
+    <li><strong>On Android:</strong> Open Google Play → tap your profile photo → Payments &amp; subscriptions → Subscriptions → Talqeen → Cancel subscription.</li>
+    <li><strong>On iOS:</strong> Open Settings → tap your Apple ID → Subscriptions → Talqeen → Cancel Subscription.</li>
+  </ul>
+  <p>Once cancelled, your subscription will remain active until the end of the current billing period. You will not be charged again after that.</p>
+
+  <h2>Data retention after deletion</h2>
+  <p>After your account is deleted:</p>
+  <ul>
+    <li>All personal data (name, email, learning progress, child profiles, certificates) is permanently deleted within <strong>30 days</strong>.</li>
+    <li>Encrypted database backups containing your data are purged within the same 30-day window.</li>
+    <li>Anonymised, aggregated data (e.g. "100 users completed Stage 3 this month" — with no individual identifiers) may be retained indefinitely as it cannot be linked to you.</li>
+  </ul>
+
+  <h2>Questions?</h2>
+  <p>If you have any questions about account deletion or your data, please contact us at <a href="mailto:privacy@talqeen.io">privacy@talqeen.io</a>. We aim to respond within 5 business days.</p>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
+        <img src="logo.png" width="40" height="40" alt="Talqeen" style="border-radius: 10px; flex-shrink: 0; display: block;">
+        <div class="footer-brand-en">Talqeen</div>
+      </div>
+      <p class="footer-tagline">Hear it. Say it. Read it.</p>
+    </div>
+    <div>
+      <ul class="footer-links">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
+        <li><a href="delete-account.html">Delete My Account</a></li>
+        <li><a href="mailto:privacy@talqeen.io">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-stores">
+        <a class="footer-store-badge" href="#google-play">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3.18 1.27C2.76 1.52 2.5 1.97 2.5 2.5v19c0 .53.26.98.68 1.23L14.5 12 3.18 1.27Z" fill="#EA4335"/>
+            <path d="M18.63 8.24 15.09 12l3.54 3.76 2.96-1.68c.84-.48.84-1.68 0-2.16L18.63 8.24Z" fill="#FBBC04"/>
+            <path d="M3.18 22.73 14.5 12 3.18 1.27C2.76 1.52 2.5 1.97 2.5 2.5v19c0 .53.26.98.68 1.23Z" fill="#34A853" opacity=".8"/>
+            <path d="M14.5 12 18.63 8.24l-3.54-3.76L3.18 1.27 14.5 12Z" fill="#4285F4" opacity=".8"/>
+          </svg>
+          Google Play
+        </a>
+        <a class="footer-store-badge" href="#app-store">
+          <svg width="14" height="16" viewBox="0 0 22 26" fill="none" aria-hidden="true">
+            <path d="M18.07 13.76c.03-3.17 2.62-4.7 2.74-4.78-1.5-2.18-3.83-2.48-4.64-2.51-1.97-.2-3.86 1.17-4.87 1.17-1 0-2.54-1.14-4.17-1.11C4.84 6.56 2.73 7.92 1.57 10c-2.36 4.06-.6 10.07 1.68 13.37 1.11 1.62 2.44 3.43 4.18 3.36 1.68-.07 2.32-1.08 4.35-1.08 2.03 0 2.61 1.08 4.38 1.04 1.81-.03 2.96-1.64 4.06-3.26 1.28-1.87 1.81-3.69 1.84-3.78-.04-.02-3.54-1.36-3.57-5.36l-.42.47Z" fill="white"/>
+            <path d="M14.69 4.22c.93-1.13 1.56-2.71 1.39-4.28-1.34.06-2.97.9-3.93 2-.86.99-1.62 2.57-1.42 4.09 1.49.11 3.02-.76 3.96-1.81Z" fill="white"/>
+          </svg>
+          App Store
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2025 Talqeen. A learning aid — a human teacher is always recommended.
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
+
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open);
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.05 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
